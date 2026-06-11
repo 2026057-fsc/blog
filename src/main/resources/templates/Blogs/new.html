@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/blogStyle.css">
+    <title>追加画面</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-logo">
+            <h1>spring blogs</h1>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="/blogs">blog list</a></li>
+                <li><a href="/blogs/new">add blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form th:action="@{/blogs}" th:object="${blogForm}" method="post">
+        <div class="form-group">
+            <input type="text" th:field="*{title}" placeholder="ブログタイトル">
+        </div>
+        <div class="form-group">
+            <input type="text" th:field="*{author}" placeholder="作成者名"></input>
+        </div>
+        <div class="form-group">
+            <textarea type="text" th:field="*{notes}" placeholder="ブログ本文"></textarea>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="submit-btn">投稿</button>
+            <a href="/blogs" class="cancel-btn">キャンセル</a>
+        </div>
+    </form>
+
+
+</body>
+
+</html>

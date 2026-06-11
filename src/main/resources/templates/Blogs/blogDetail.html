@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/blogStyle.css">
+    <title>ブログの詳細</title>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-logo">
+            <h1>spring blogs</h1>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="/blogs">blog list</a></li>
+                <li><a href="/blogs/new">add blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="blogdetail">
+
+        <div class="detail">
+            <h2 th:text="${blogdetail.title}">タイトル</h2>
+            <h3 th:text="${blogdetail.author}">作成者名</h3>
+            <p th:text="${blogdetail.notes}">本文</p>
+        </div>
+    </div>
+</body>
+</html>

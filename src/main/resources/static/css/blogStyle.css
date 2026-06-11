@@ -1,0 +1,297 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ヘッダーのデザイン */
+.site-header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-logo h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.header-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* メニュー間の余白 */
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* ブログ詳細エリアのレイアウト */
+.blogdetail {
+    max-width: 800px;  /* 読みやすい横幅に制限 */
+    margin: 40px auto; /* 画面の中央に配置 */
+    padding: 0 20px;
+}
+
+/* 詳細カードのデザイン */
+.detail {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* タイトル */
+.detail h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* 作成者名 */
+.detail h3 {
+    font-size: 14px;
+    color: #95a5a6;
+    font-weight: normal;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee; /* タイトルと本文の間の区切り線 */
+    padding-bottom: 15px;
+}
+
+/* 本文 */
+.detail p {
+    font-size: 16px;
+    color: #4f5f6f;
+    white-space: pre-wrap; /* データベース内の改行を画面にも反映させる */
+}
+
+
+
+/* 全体の囲み */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ページの見出し */
+.page-title {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 12px;
+}
+
+/* 見出しの左側に青い縦線をいれる */
+.page-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 4px;
+    height: 24px;
+    background-color: #3498db;
+    border-radius: 2px;
+}
+
+
+
+/* 全体の囲み */
+.container {
+    max-width: 800px; /* 縦並びで見やすいように少し横幅をスマートに */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ページの見出し */
+.page-title {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.page-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 4px;
+    height: 22px;
+    background-color: #3498db;
+    border-radius: 2px;
+}
+
+/* 縦に並べるための外枠（隙間をコントロール） */
+.blog-grid {
+    display: flex;
+    flex-direction: column; /* 💡 縦一列に並べる指定 */
+    gap: 20px; /* 記事と記事の間のスキマ */
+}
+
+/* 縦並びの記事リスト単体 */
+.blog-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    border: 1px solid #eef2f5;
+    transition: all 0.3s ease;
+}
+
+
+/* カード内のレイアウト調整 */
+.card-content {
+    padding: 25px;
+}
+
+/* タイトル */
+.card-title {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* 作成者名 */
+.card-author {
+    font-size: 13px;
+    color: #95a5a6;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* 本文プレビュー（縦並びなので2行ですっきり見せる） */
+.card-excerpt {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 2行に制限 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* カード内のタイトル */
+.card-title {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* カード内の作成者名 */
+.card-author {
+    font-size: 13px;
+    color: #95a5a6;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* カード内の本文プレビュー（長すぎる場合は3行で三点リーダーにする） */
+.card-excerpt {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* ボタンをカードの最下部に固定するため */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 3行まで表示 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* フォーム全体の囲み枠 */
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* 入力エリアの上下の隙間 */
+.form-group {
+    margin-bottom: 25px;
+}
+
+/* 一行入力（タイトル・作成者名）と複数行入力（本文）の共通スタイル */
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+
+/* 本文入力欄（textarea）の高さ調整 */
+.form-group textarea {
+    height: 200px;
+    resize: vertical; /* ユーザーが上下にだけサイズを伸ばせるようにする */
+}
+
+/* ボタンを並べるエリア */
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* 投稿ボタンの基本スタイル */
+.submit-btn {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* キャンセルボタンの基本スタイル */
+.cancel-btn {
+    text-decoration: none;
+    color: #7f8c8d;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+

@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/blogStyle.css">
     <title>ブログ</title>
 </head>
+
 <body>
-    <h1>Blog</h1>
+    <header class="site-header">
+        <div class="header-logo">
+            <h1>spring blogs</h1>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="/blogs">blog list</a></li>
+                <li><a href="/blogs/new">add blog</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="list" th:if="${!#lists.isEmpty(blogsList)}">
-        <ul>
-            <li th:each="blogs : ${blogsList}">
-                <h2>
-                    <a th:href="@{/Blogs/{id}(id=${blogs.id})}" th:text="${blogs.title}">タイトル</a>
-                </h2>
+    <main class="container">
+        <h2 class="page-title">blog list</h2>
 
-                <p th:text="${blogs.notes}">本文</p>
+        <div class="blog-grid">
 
-                <p th:text="${blogs.author}">著者</p>
+            <article class="blog-card" th:each="blog : ${blogsList}">
+                <div class="card-content">
+                    <!-- <h3 class="card-title" th:text="${blog.title}">タイトル</h3> -->
+                    <h3 class="card-title">
+                        <a th:href="@{/blogs/{id}(id=${blog.id})}" th:text="${blog.title}">タイトル</a>
+                    </h3>
+                    <span class="card-author" th:text="'By ' + ${blog.author}">作成者名</span>
+                    <p class="card-excerpt" th:text="${blog.notes}">本文</p>
 
 
-            </li>
-        </ul>
-    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
 </body>
+
 </html>
